@@ -19,14 +19,8 @@ modules:
       cflags-override: true
       cxxflags: ''
       cxxflags-override: true
-      arch:
-        x86_64:
-          config-opts:
-            - -DCMAKE_BUILD_TYPE=Release
-        aarch64:
-          config-opts:
-            - -DCMAKE_BUILD_TYPE=MinSizeRel
     config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
       - -DPORT=GTK
       - -DUSE_LIBNOTIFY=OFF
       - -DUSE_LIBSECRET=OFF
