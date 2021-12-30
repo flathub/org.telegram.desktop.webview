@@ -15,10 +15,8 @@ modules:
   - name: webkitgtk
     buildsystem: cmake-ninja
     build-options:
-      cflags: ''
-      cflags-override: true
-      cxxflags: ''
-      cxxflags-override: true
+      cflags: '-g0'
+      cxxflags: '-g0'
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DPORT=GTK
