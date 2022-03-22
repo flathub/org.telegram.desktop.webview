@@ -25,6 +25,7 @@ modules:
       - -DUSE_SOUP2=ON
       - -DUSE_WOFF2=OFF
       - -DUSE_WPE_RENDERER=OFF
+      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
       - -DENABLE_GAMEPAD=OFF
       - -DENABLE_SPELLCHECK=OFF
     sources:
