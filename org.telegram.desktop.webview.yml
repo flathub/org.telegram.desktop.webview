@@ -20,18 +20,18 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DPORT=GTK
-      - -DUSE_LIBNOTIFY=OFF
       - -DUSE_LIBSECRET=OFF
       - -DUSE_SOUP2=ON
       - -DUSE_WOFF2=OFF
       - -DUSE_WPE_RENDERER=OFF
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
       - -DENABLE_GAMEPAD=OFF
+      - -DENABLE_INTROSPECTION=OFF
       - -DENABLE_SPELLCHECK=OFF
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.36.7.tar.xz
-        sha256: 0c260cf2b32f0481d017670dfed1b61e554967cd067195606c9f9eb5fe731743
+        url: https://webkitgtk.org/releases/webkitgtk-2.38.0.tar.xz
+        sha256: f9ce6375a3b6e1329b0b609f46921e2627dc7ad6224b37b967ab2ea643bc0fbd
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
