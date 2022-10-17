@@ -6,6 +6,8 @@ build-extension: true
 appstream-compose: false
 build-options:
   prefix: /app/lib/webview
+  cflags: -g0 -DNDEBUG
+  cxxflags: -g0 -DNDEBUG
   strip: true
 cleanup:
   - /include
@@ -14,11 +16,8 @@ cleanup:
 modules:
   - name: webkitgtk
     buildsystem: cmake-ninja
-    build-options:
-      cflags: -g0
-      cxxflags: -g0
     config-opts:
-      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_BUILD_TYPE=None
       - -DPORT=GTK
       - -DUSE_LIBSECRET=OFF
       - -DUSE_SOUP2=ON
