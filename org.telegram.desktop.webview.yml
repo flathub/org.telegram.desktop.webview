@@ -1,5 +1,5 @@
 id: org.telegram.desktop.webview
-sdk: org.freedesktop.Sdk//21.08
+sdk: org.freedesktop.Sdk//22.08
 runtime: org.telegram.desktop
 runtime-version: stable
 build-extension: true
