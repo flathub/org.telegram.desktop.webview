@@ -1,5 +1,5 @@
 id: org.telegram.desktop.webview
-sdk: org.freedesktop.Sdk//21.08
+sdk: org.freedesktop.Sdk//22.08
 runtime: org.telegram.desktop
 runtime-version: stable
 build-extension: true
@@ -20,7 +20,6 @@ modules:
       - -DCMAKE_BUILD_TYPE=None
       - -DPORT=GTK
       - -DUSE_LIBSECRET=OFF
-      - -DUSE_SOUP2=ON
       - -DUSE_WOFF2=OFF
       - -DUSE_WPE_RENDERER=OFF
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
