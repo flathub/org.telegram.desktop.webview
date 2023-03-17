@@ -14,6 +14,21 @@ cleanup:
   - /lib/pkgconfig
   - /share/gir-1.0
 modules:
+  - name: unifdef
+    no-autogen: true
+    make-install-args:
+      - prefix=/app/lib/webview
+    sources:
+      - type: archive
+        url: https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz
+        sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
+        x-checker-data:
+          type: anitya
+          project-id: 5046
+          url-template: https://dotat.at/prog/unifdef/unifdef-$version.tar.xz
+    cleanup:
+      - '*'
+
   - name: webkitgtk
     buildsystem: cmake-ninja
     config-opts:
