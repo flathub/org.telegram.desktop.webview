@@ -29,6 +29,26 @@ modules:
     cleanup:
       - '*'
 
+  - name: libavif
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=None
+      - -DAVIF_CODEC_DAV1D=ON
+    sources:
+      - type: archive
+        url: https://github.com/AOMediaCodec/libavif/archive/v0.11.1.tar.gz
+        sha256: 0eb49965562a0e5e5de58389650d434cff32af84c34185b6c9b7b2fccae06d4e
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/AOMediaCodec/libavif/releases/latest
+          tag-query: .tag_name
+          timestamp-query: .published_at
+          version-query: $tag | sub("^[vV]"; "")
+          url-query: '"https://github.com/AOMediaCodec/libavif/archive/\($tag).tar.gz"'
+    cleanup:
+      - '*'
+
   - name: webkitgtk
     buildsystem: cmake-ninja
     config-opts:
@@ -50,6 +70,11 @@ modules:
           url: https://webkitgtk.org/releases/
           version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
           url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
+      - type: shell
+        commands:
+          - sed -i 's@NAMES avif.h@NAMES avif/avif.h@' Source/cmake/FindAVIF.cmake
+          - sed -i '/PATH_SUFFIXES avif/d' Source/cmake/FindAVIF.cmake
+          - sed -i 's@${AVIF_INCLUDE_DIR}/avif.h@${AVIF_INCLUDE_DIR}/avif/avif.h@' Source/cmake/FindAVIF.cmake
 
   - name: metadata
     buildsystem: simple
