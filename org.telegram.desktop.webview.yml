@@ -67,6 +67,23 @@ modules:
           version-query: $tag
           url-query: '"https://github.com/WebPlatformForEmbedded/libwpe/releases/download/\($tag)/libwpe-\($version).tar.xz"'
 
+  - name: wpebackend-fdo
+    buildsystem: meson
+    builddir: true
+    config-opts:
+      - --buildtype=plain
+    sources:
+      - type: archive
+        url: https://github.com/Igalia/WPEBackend-fdo/releases/download/1.14.1/wpebackend-fdo-1.14.1.tar.xz
+        sha256: 01938dd93c62b3a47b18dd13c70d50490a8b8a6caec23c8550a3dbdbcc6bbb50
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/Igalia/WPEBackend-fdo/releases/latest
+          tag-query: .tag_name
+          timestamp-query: .published_at
+          version-query: $tag
+          url-query: '"https://github.com/Igalia/WPEBackend-fdo/releases/download/\($tag)/wpebackend-fdo-\($version).tar.xz"'
+
   - name: webkitgtk
     buildsystem: cmake-ninja
     config-opts:
