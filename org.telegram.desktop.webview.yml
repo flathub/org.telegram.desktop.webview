@@ -6,6 +6,7 @@ build-extension: true
 appstream-compose: false
 build-options:
   prefix: /app/lib/webview
+  prepend-pkg-config-path: /app/lib/webview/lib/pkgconfig
   cflags: -g0 -DNDEBUG
   cxxflags: -g0 -DNDEBUG
   strip: true
@@ -45,9 +46,26 @@ modules:
           tag-query: .tag_name
           timestamp-query: .published_at
           version-query: $tag | sub("^[vV]"; "")
-          url-query: '"https://github.com/AOMediaCodec/libavif/archive/\($tag).tar.gz"'
+          url-query: '"https://github.com/AOMediaCodec/libavif/archive/\($tag)/libavif-\($version).tar.gz"'
     cleanup:
       - '*'
+
+  - name: libwpe
+    buildsystem: meson
+    builddir: true
+    config-opts:
+      - --buildtype=plain
+    sources:
+      - type: archive
+        url: https://github.com/WebPlatformForEmbedded/libwpe/releases/download/1.14.1/libwpe-1.14.1.tar.xz
+        sha256: b1d0cdcf0f8dbb494e65b0f7913e357106da9a0d57f4fbb7b9d1238a6dbe9ade
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/WebPlatformForEmbedded/libwpe/releases/latest
+          tag-query: .tag_name
+          timestamp-query: .published_at
+          version-query: $tag
+          url-query: '"https://github.com/WebPlatformForEmbedded/libwpe/releases/download/\($tag)/libwpe-\($version).tar.xz"'
 
   - name: webkitgtk
     buildsystem: cmake-ninja
