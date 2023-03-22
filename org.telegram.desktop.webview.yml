@@ -74,8 +74,8 @@ modules:
       - --buildtype=plain
     sources:
       - type: archive
-        url: https://github.com/Igalia/WPEBackend-fdo/releases/download/1.14.1/wpebackend-fdo-1.14.1.tar.xz
-        sha256: 01938dd93c62b3a47b18dd13c70d50490a8b8a6caec23c8550a3dbdbcc6bbb50
+        url: https://github.com/Igalia/WPEBackend-fdo/releases/download/1.14.2/wpebackend-fdo-1.14.2.tar.xz
+        sha256: 93c9766ae9864eeaeaee2b0a74f22cbca08df42c1a1bdb55b086f2528e380d38
         x-checker-data:
           type: json
           url: https://api.github.com/repos/Igalia/WPEBackend-fdo/releases/latest
@@ -108,7 +108,8 @@ modules:
         commands:
           - sed -i 's@NAMES avif.h@NAMES avif/avif.h@' Source/cmake/FindAVIF.cmake
           - sed -i '/PATH_SUFFIXES avif/d' Source/cmake/FindAVIF.cmake
-          - sed -i 's@${AVIF_INCLUDE_DIR}/avif.h@${AVIF_INCLUDE_DIR}/avif/avif.h@' Source/cmake/FindAVIF.cmake
+          - sed -i 's@${AVIF_INCLUDE_DIR}/avif.h@${AVIF_INCLUDE_DIR}/avif/avif.h@'
+            Source/cmake/FindAVIF.cmake
 
   - name: metadata
     buildsystem: simple
