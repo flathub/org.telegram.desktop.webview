@@ -50,6 +50,36 @@ modules:
     cleanup:
       - '*'
 
+  - name: libjxl
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=None
+      - -DBUILD_TESTING=OFF
+      - -DJPEGXL_ENABLE_DEVTOOLS=OFF
+      - -DJPEGXL_ENABLE_TOOLS=OFF
+      - -DJPEGXL_ENABLE_DOXYGEN=OFF
+      - -DJPEGXL_ENABLE_MANPAGES=OFF
+      - -DJPEGXL_ENABLE_BENCHMARK=OFF
+      - -DJPEGXL_ENABLE_EXAMPLES=OFF
+      - -DJPEGXL_ENABLE_JNI=OFF
+      - -DJPEGXL_ENABLE_SJPEG=OFF
+      - -DJPEGXL_ENABLE_OPENEXR=OFF
+      - -DJPEGXL_ENABLE_SKCMS=OFF
+    sources:
+      - type: archive
+        url: https://github.com/libjxl/libjxl/archive/v0.8.2/libjxl-0.8.2.tar.gz
+        sha256: c70916fb3ed43784eb840f82f05d390053a558e2da106e40863919238fa7b420
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/libjxl/libjxl/releases/latest
+          tag-query: .tag_name
+          timestamp-query: .published_at
+          version-query: $tag | sub("^[vV]"; "")
+          url-query: '"https://github.com/libjxl/libjxl/archive/\($tag)/libjxl-\($version).tar.gz"'
+    cleanup:
+      - '*'
+
   - name: libwpe
     buildsystem: meson
     builddir: true
