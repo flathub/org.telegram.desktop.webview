@@ -143,6 +143,8 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=None
       - -DPORT=GTK
+      - -DUSE_GTK4=OFF
+      - -DUSE_LIBBACKTRACE=OFF
       - -DUSE_LIBSECRET=OFF
       - -DUSE_WOFF2=OFF
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
