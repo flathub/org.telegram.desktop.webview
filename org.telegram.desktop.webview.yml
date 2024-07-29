@@ -7,8 +7,8 @@ appstream-compose: false
 build-options:
   prefix: /app/lib/webview
   prepend-pkg-config-path: /app/lib/webview/lib/pkgconfig
-  cflags: -g0 -DNDEBUG
-  cxxflags: -g0 -DNDEBUG
+  cflags: -g0
+  cxxflags: -g0
   strip: true
 cleanup:
   - /include
