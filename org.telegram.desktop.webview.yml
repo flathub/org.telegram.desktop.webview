@@ -107,6 +107,9 @@ modules:
 
   - name: webkitgtk
     buildsystem: cmake-ninja
+    build-options:
+      cflags: -DNDEBUG
+      cxxflags: -DNDEBUG
     config-opts:
       - -DCMAKE_BUILD_TYPE=None
       - -DPORT=GTK
