@@ -131,6 +131,8 @@ modules:
           url: https://webkitgtk.org/releases/
           version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
           url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
+          versions:
+            <: 2.45.0
       - type: shell
         commands:
           - sed -i 's@NAMES avif.h@NAMES avif/avif.h@' Source/cmake/FindAVIF.cmake
