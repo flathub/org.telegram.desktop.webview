@@ -46,6 +46,7 @@ modules:
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
       - -DENABLE_GAMEPAD=OFF
       - -DENABLE_INTROSPECTION=OFF
+      - -DENABLE_SPEECH_SYNTHESIS=OFF
       - -DENABLE_SPELLCHECK=OFF
     sources:
       - type: archive
