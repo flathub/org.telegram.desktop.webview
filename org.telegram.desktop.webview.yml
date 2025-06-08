@@ -4,6 +4,7 @@ runtime: org.telegram.desktop
 runtime-version: stable
 build-extension: true
 appstream-compose: false
+
 build-options:
   prefix: /app/lib/webview
   prepend-pkg-config-path: /app/lib/webview/lib/pkgconfig
