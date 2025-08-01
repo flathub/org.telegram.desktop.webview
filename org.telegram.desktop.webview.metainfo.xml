@@ -8,8 +8,11 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.0</project_license>
   <releases>
-    <release version="2.48.4" date="2025-07-29">
+    <release version="2.48.5" date="2025-08-01">
       <description></description>
+    </release>
+    <release version="2.48.4" date="2025-07-29">
+      <description/>
     </release>
     <release version="2.48.3" date="2025-05-28">
       <description/>
